@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>pertukaran 2 nilai</title>
+</head>
+<body>
+    <h2>pertukaran 2 nilai</h2>
+    input A: <input type="number" id="inpA"><br><br>
+    input B: <input type="number" id="inpB"><br><br>
+    <button onclick="tukar()">tukar nilai</button>
+    <hr>
+    <p id="resA">A sekarang: </p>
+    <p id="resB">B sekarang: </p>
+    <script>
+        function tukar() {
+            let A = parseInt(document.getElementById("inpA").value);
+            let B = parseInt(document.getElementById("inpB").value);
+            let temp = A;
+            A = B;
+            B = temp;
+            document.getElementById("resA").innerHTML = "A sekarang: " + A;
+            document.getElementById("resB").innerHTML = "B sekarang: " + B;
+        }
+    </script>
+</body>
+</html>

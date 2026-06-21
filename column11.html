@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>indeks nilai</title>
+</head>
+<body>
+    <h2>menentukan indeks nilai ujian</h2>
+    nilai angka: <input type="number" id="nilaiUjian">
+    <button onclick="cekIndeks()">lihat indeks</button>
+    <hr>
+    <p id="outIndeks">indeks: -</p>
+    <script>
+        function cekIndeks() {
+            let nilai = parseInt(document.getElementById("nilaiUjian").value);
+            let indeks = "";
+            if (nilai >= 80) indeks = "A";
+            else if (nilai >= 70 && nilai < 80) indeks = "B";
+            else if (nilai >= 55 && nilai < 70) indeks = "C";
+            else if (nilai >= 40 && nilai < 55) indeks = "D";
+            else indeks = "E"; 
+            document.getElementById("outIndeks").innerHTML = "Indeks: " + indeks;
+        }
+    </script>
+</body>
+</html>

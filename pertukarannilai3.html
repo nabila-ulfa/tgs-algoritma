@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>pertukaran 3 nilai</title>
+</head>
+<body>
+    <h2>pertukaran 3 nilai (X, Y, Z) &rarr; (Y, Z, X)</h2>
+    X: <input type="number" id="inpX"><br><br>
+    Y: <input type="number" id="inpY"><br><br>
+    Z: <input type="number" id="inpZ"><br><br>
+    <button onclick="tukar3()">Putar Nilai</button>
+    <hr>
+    <p id="outX">X: </p>
+    <p id="outY">Y: </p>
+    <p id="outZ">Z: </p>
+    <script>
+        function tukar3() {
+            let x = parseInt(document.getElementById("inpX").value);
+            let y = parseInt(document.getElementById("inpY").value);
+            let z = parseInt(document.getElementById("inpZ").value); 
+            let temp = x;
+            x = y;
+            y = z;
+            z = temp; 
+            document.getElementById("outX").innerHTML = "X baru: " + x;
+            document.getElementById("outY").innerHTML = "Y baru: " + y;
+            document.getElementById("outZ").innerHTML = "Z baru: " + z;
+        }
+    </script>
+</body>
+</html>

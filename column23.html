@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>berat ideal</title>
+</head>
+<body>
+    <h2>cek berat badan ideal</h2>
+    tinggi badan (cm): <input type="number" id="tb"><br><br>
+    berat badan (kg): <input type="number" id="bb"><br><br>
+    <button onclick="cekIdeal()">cek status</button>
+    <hr>
+    <p id="outIdeal"></p>
+    <script>
+        function cekIdeal() {
+            let tinggi = parseInt(document.getElementById("tb").value);
+            let berat = parseInt(document.getElementById("bb").value);
+            let ideal = (tinggi - 100) - ((tinggi - 100) * 0.10);
+            let selisih = berat - ideal;
+            if (selisih >= -2 && selisih <= 2) {
+                document.getElementById("outIdeal").innerHTML = "Status: Ideal";
+            } else {
+                document.getElementById("outIdeal").innerHTML = "Status: Tidak Ideal";
+            }
+        }
+    </script>
+</body>
+</html>

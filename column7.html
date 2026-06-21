@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Upah Honorer</title>
+</head>
+<body>
+    <h2>hitung gaji honorer PT ABC</h2>
+    jam kerja: <input type="number" id="jk">
+    <button onclick="hitungUpah()">hitung gaji</button>
+    <hr>
+    <p id="hasilUpah">total upah: Rp 0</p>
+    <script>
+        function hitungUpah() {
+            let jam_kerja = parseInt(document.getElementById("jk").value);
+            let upah_pokok = 0;
+            let upah_lembur = 0;
+            if (jam_kerja > 48) {
+                let jam_lembur = jam_kerja - 48;
+                upah_pokok = 48 * 2000;
+                upah_lembur = jam_lembur * 3000;
+            } else {
+                upah_pokok = jam_kerja * 2000;
+                upah_lembur = 0;
+            }
+            let total = upah_pokok + upah_lembur;
+            document.getElementById("hasilUpah").innerHTML = "Total Upah: Rp " + total;
+        }
+    </script>
+</body>
+</html>

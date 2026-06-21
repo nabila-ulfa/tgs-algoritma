@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>konversi detik</title>
+</head>
+<body>
+    <h2>Konversi waktu dari detik</h2>
+    <label>masukkan total detik:</label>
+    <input type="number" id="inputDetik">
+    <button onclick="hitungWaktu()">Konversi</button>
+    <hr>
+    <h3>hasil konversi:</h3>
+    <p id="hasilHari">hari: 0</p>
+    <p id="hasilJam">jam: 0</p>
+    <p id="hasilMenit">menit: 0</p>
+    <p id="hasilDetik">detik: 0</p>
+    <script>
+        function hitungWaktu() {
+            let total_detik = parseInt(document.getElementById("inputDetik").value);
+            let hari = Math.floor(total_detik / 86400);
+            let sisa = total_detik % 86400;
+            let jam = Math.floor(sisa / 3600);
+            sisa = sisa % 3600;
+            let menit = Math.floor(sisa / 60);
+            let detik = sisa % 60;
+            document.getElementById("hasilHari").innerHTML = "Hari: " + hari;
+            document.getElementById("hasilJam").innerHTML = "Jam: " + jam;
+            document.getElementById("hasilMenit").innerHTML = "Menit: " + menit;
+            document.getElementById("hasilDetik").innerHTML = "Detik: " + detik;
+        }
+    </script>
+</body>
+</html>

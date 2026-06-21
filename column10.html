@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>gaji golongan</title>
+</head>
+<body>
+    <h2>gaji berdasarkan golongan</h2>
+    nama: <input type="text" id="namaKaryawan"><br><br>
+    golongan (A/B/C/D): <input type="text" id="golKaryawan" maxlength="1"><br><br>
+    jam kerja: <input type="number" id="jkKaryawan"><br><br>
+    <button onclick="gajiGol()">Hitung</button>
+    <hr>
+    <p id="outGajiKaryawan"></p>
+    <script>
+        function gajiGol() {
+            let nama = document.getElementById("namaKaryawan").value;
+            let gol = document.getElementById("golKaryawan").value.toUpperCase();
+            let jam_kerja = parseInt(document.getElementById("jkKaryawan").value);
+            let upah_per_jam = 0;
+            if (gol === 'A') upah_per_jam = 4000;
+            else if (gol === 'B') upah_per_jam = 5000;
+            else if (gol === 'C') upah_per_jam = 6000;
+            else if (gol === 'D') upah_per_jam = 7500;
+            let gaji_pokok = 0;
+            let upah_lembur = 0;
+            if (jam_kerja > 48) {
+                let jam_lembur = jam_kerja - 48;
+                gaji_pokok = 48 * upah_per_jam;
+                upah_lembur = jam_lembur * 3000;
+            } else {
+                gaji_pokok = jam_kerja * upah_per_jam;
+            }
+            
+            let total = gaji_pokok + upah_lembur;
+            document.getElementById("outGajiKaryawan").innerHTML = "Karyawan bernama " + nama + " mendapatkan Total Gaji: Rp " + total;
+        }
+    </script>
+</body>
+</html>

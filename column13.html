@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>increment jam</title>
+</head>
+<body>
+    <h2>increment waktu (+1 Detik)</h2>
+    jam (hh): <input type="number" id="jh"><br><br>
+    menit (mm): <input type="number" id="jm"><br><br>
+    detik (ss): <input type="number" id="jd"><br><br>
+    <button onclick="tambahDetik()">+1 Detik</button>
+    <hr>
+    <p id="outWaktu">Waktu Baru: </p>
+    <script>
+        function tambahDetik() {
+            let hh = parseInt(document.getElementById("jh").value);
+            let mm = parseInt(document.getElementById("jm").value);
+            let ss = parseInt(document.getElementById("jd").value);
+            ss = ss + 1;
+            if (ss === 60) {
+                ss = 0;
+                mm = mm + 1;
+                if (mm === 60) {
+                    mm = 0;
+                    hh = hh + 1;
+                    if (hh === 24) {
+                        hh = 0;
+                    }
+                }
+            }
+            document.getElementById("outWaktu").innerHTML = "Waktu Baru: " + hh + ":" + mm + ":" + ss;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>angka ke teks</title>
+</head>
+<body>
+    <h2>konversi angka (1-4) ke teks</h2>
+    masukkan angka: <input type="number" id="numTxt">
+    <button onclick="konvTeks()">ubah</button>
+    <hr>
+    <p id="outTeks"></p>
+    <script>
+        function konvTeks() {
+            let angka = parseInt(document.getElementById("numTxt").value);
+            let teks = "";
+            switch(angka) {
+                case 1: teks = "satu"; break;
+                case 2: teks = "dua"; break;
+                case 3: teks = "tiga"; break;
+                case 4: teks = "empat"; break;
+                default: teks = "angka yang dimasukkan salah";
+            }
+            document.getElementById("outTeks").innerHTML = teks;
+        }
+    </script>
+</body>
+</html>

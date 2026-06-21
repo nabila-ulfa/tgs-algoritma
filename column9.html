@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>cek bilangan</title>
+</head>
+<body>
+    <h2>cek jenis bilangan</h2>
+    masukkan angka: <input type="number" id="num">
+    <button onclick="cekBil()">Cek</button>
+    <hr>
+    <p id="outBil"></p>
+    <script>
+        function cekBil() {
+            let bil = parseInt(document.getElementById("num").value);
+            if (bil > 0) {
+                document.getElementById("outBil").innerHTML = "Bilangan Positif";
+            } else if (bil < 0) {
+                document.getElementById("outBil").innerHTML = "Bilangan Negatif";
+            } else {
+                document.getElementById("outBil").innerHTML = "Bilangan Nol";
+            }
+        }
+    </script>
+</body>
+</html>
