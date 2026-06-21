@@ -1,0 +1,1 @@
+console.log("Belajar Javascript 123.45");
